@@ -39,17 +39,5 @@ public class CityUtils {
         return new City(name, region, district, population, foundation);
     }
 
-    public static List<City> sortAsAlphabetically() {
-        List<City> cities = parse();
-        cities.sort(Comparator.comparing(City::getName));
-        return cities;
-    }
 
-    public static List<City> doubleSortAsAlphabetically() {
-        List<City> cities = parse();
-        cities.sort(Comparator
-                .comparing(City::getDistrict)
-                .thenComparing(City::getName));
-        return cities;
-    }
 }
